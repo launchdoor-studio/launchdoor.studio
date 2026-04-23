@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-surface text-ink font-sans;
+    font-feature-settings: "cv11", "ss01", "ss03";
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  ::selection {
+    background-color: rgba(20, 93, 253, 0.16);
+    color: inherit;
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-2 ring-brand/60 ring-offset-2 ring-offset-surface rounded-[2px];
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight text-ink;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-eyebrow uppercase font-medium text-ink-muted;
+  }
+
+  .eyebrow::before {
+    content: "";
+    @apply block h-[6px] w-[6px] rounded-full bg-brand;
+  }
+
+  .hairline {
+    @apply border-t border-surface-border;
+  }
+
+  .card {
+    @apply rounded-2xl bg-surface-raised ring-1 ring-surface-border shadow-card;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-white transition-colors duration-200 hover:bg-ink-soft disabled:opacity-60;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-surface-raised px-5 py-2.5 text-sm font-medium text-ink ring-1 ring-surface-border transition-colors duration-200 hover:bg-white;
+  }
+
+  .btn-brand {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-white transition-colors duration-200 hover:bg-brand-700;
+  }
+
+  .link {
+    @apply text-ink underline-offset-4 decoration-surface-border hover:decoration-brand hover:text-brand transition-colors;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .mask-fade-b {
+    mask-image: linear-gradient(to bottom, black 70%, transparent);
+  }
+}
