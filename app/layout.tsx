@@ -1,5 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono, Instrument_Serif } from "next/font/google";
+import {
+  Inter,
+  JetBrains_Mono,
+  Instrument_Serif,
+  Fraunces,
+} from "next/font/google";
 import { siteConfig } from "@/lib/site";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -21,6 +26,13 @@ const display = Instrument_Serif({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-display",
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["600", "700", "900"],
+  variable: "--font-fraunces",
   display: "swap",
 });
 
@@ -75,9 +87,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sans.variable} ${mono.variable} ${display.variable}`}
+      className={`${sans.variable} ${mono.variable} ${display.variable} ${fraunces.variable}`}
     >
-      <body className="min-h-screen flex flex-col">
+      <body
+        className="min-h-screen flex flex-col"
+        suppressHydrationWarning
+      >
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

@@ -148,3 +148,9 @@ ui_inspo/
 # Keep source logo assets local; keep public logos tracked
 logos/
 !public/logos/
+
+# Local asset sources (copied into public/product-logos)
+all-project-logos/
+
+# Local reference screenshots
+screenshots/

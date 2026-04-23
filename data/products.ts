@@ -14,6 +14,7 @@ export type Product = {
     impact: string;
   };
   accent: "blue" | "emerald" | "violet" | "amber" | "slate";
+  logo: string;
 };
 
 export const products: Product[] = [
@@ -74,6 +75,7 @@ export const products: Product[] = [
         "Freelancers gain professional credibility with a custom-branded portal and save thousands in subscription fees by owning their infrastructure.",
     },
     accent: "blue",
+    logo: "/product-logos/botttle.svg",
   },
   {
     slug: "foliomint",
@@ -126,6 +128,7 @@ export const products: Product[] = [
         "Users go from a static PDF to a live, professional web presence in under five minutes, significantly improving their personal brand and job-market competitiveness.",
     },
     accent: "emerald",
+    logo: "/product-logos/foliomint.svg",
   },
   {
     slug: "openconduit",
@@ -179,6 +182,7 @@ export const products: Product[] = [
         "Small businesses can now scale their WhatsApp operations with professional lead tracking and automated workflows without the risk of vendor lock-in or per-seat pricing.",
     },
     accent: "violet",
+    logo: "/product-logos/openconduit.svg",
   },
   {
     slug: "queriously",
@@ -235,6 +239,7 @@ export const products: Product[] = [
         "Researchers synthesize information across dozens of papers faster, with grounded AI assistance that reduces the cognitive load of reading dense technical literature.",
     },
     accent: "amber",
+    logo: "/product-logos/queriously.png",
   },
   {
     slug: "rezumate",
@@ -242,7 +247,7 @@ export const products: Product[] = [
     tagline: "AI-powered resume intelligence for smarter hiring.",
     short:
       "A resume intelligence tool for analyzing, comparing, and improving resumes against job descriptions.",
-    link: "https://rezumate.app",
+    link: "https://rezumate.xyz",
     status: "Beta / Production Ready",
     overview:
       "Rezumate is a web-based intelligence tool that helps recruiters and job seekers analyze, compare, and rank resumes against specific job descriptions using high-performance AI.",
@@ -288,6 +293,7 @@ export const products: Product[] = [
         "Recruiters reduce screening time by over 70% through automated ranking, while job seekers gain a clear roadmap for aligning their experience with the roles they want.",
     },
     accent: "slate",
+    logo: "/product-logos/rezumate.png",
   },
 ];
 

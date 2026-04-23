@@ -3,8 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/container";
-import { products, productsBySlug } from "@/data/products";
+import { products, productsBySlug, type Product } from "@/data/products";
 import { ContactCTA } from "@/components/sections/contact-cta";
+import { ProductMark } from "@/components/sections/product-preview";
+import { ProductMockup } from "@/components/product-ui";
 
 type Params = { slug: string };
 
@@ -54,9 +56,20 @@ export default async function ProductCaseStudy({
 
       <section className="pb-14">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
-            <div className="md:col-span-8">
-              <div className="flex flex-wrap items-center gap-2 text-[12.5px]">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+            <div className="md:col-span-7">
+              <div className="flex items-center gap-3">
+                <ProductMark product={product} size={52} />
+                <div className="flex flex-col">
+                  <h1 className="text-display-lg text-balance leading-[1.02]">
+                    {product.name}
+                  </h1>
+                </div>
+              </div>
+              <p className="mt-5 font-display italic text-[22px] md:text-[24px] text-ink-muted leading-snug">
+                {product.tagline}
+              </p>
+              <div className="mt-6 flex flex-wrap items-center gap-2 text-[12.5px]">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-brand/10 px-2.5 py-1 text-brand font-medium">
                   <span className="h-1.5 w-1.5 rounded-full bg-brand" />
                   {product.status}
@@ -71,13 +84,7 @@ export default async function ProductCaseStudy({
                   <ArrowUpRight size={12} strokeWidth={2} />
                 </a>
               </div>
-              <h1 className="mt-6 text-display-lg text-balance">
-                {product.name}
-                <span className="block text-ink-muted font-display italic font-normal text-[60%] mt-2">
-                  {product.tagline}
-                </span>
-              </h1>
-              <p className="mt-6 max-w-2xl text-[16.5px] leading-relaxed text-ink-muted text-pretty">
+              <p className="mt-8 max-w-2xl text-[16.5px] leading-relaxed text-ink-muted text-pretty">
                 {product.overview}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
@@ -97,6 +104,10 @@ export default async function ProductCaseStudy({
                   Build something similar
                 </Link>
               </div>
+            </div>
+
+            <div className="md:col-span-5">
+              <ProductHeroImage product={product} />
             </div>
           </div>
         </Container>
@@ -193,6 +204,40 @@ export default async function ProductCaseStudy({
   );
 }
 
+const accentBg: Record<Product["accent"], string> = {
+  blue: "from-brand/[0.1] via-brand/[0.02] to-transparent",
+  emerald: "from-emerald-500/[0.1] via-emerald-500/[0.02] to-transparent",
+  violet: "from-violet-500/[0.1] via-violet-500/[0.02] to-transparent",
+  amber: "from-amber-500/[0.12] via-amber-500/[0.02] to-transparent",
+  slate: "from-ink/[0.08] via-ink/[0.02] to-transparent",
+};
+
+function ProductHeroImage({ product }: { product: Product }) {
+  return (
+    <div
+      className={`relative rounded-2xl overflow-hidden ring-1 ring-surface-border bg-gradient-to-br ${accentBg[product.accent]}`}
+    >
+      <div className="relative p-5 md:p-7">
+        <div className="rounded-xl bg-surface-raised ring-1 ring-surface-border shadow-raised overflow-hidden flex flex-col">
+          <div className="flex items-center gap-2 px-3 py-2 border-b border-surface-border bg-surface">
+            <div className="flex gap-1.5">
+              <span className="h-2.5 w-2.5 rounded-full bg-surface-border" />
+              <span className="h-2.5 w-2.5 rounded-full bg-surface-border" />
+              <span className="h-2.5 w-2.5 rounded-full bg-surface-border" />
+            </div>
+            <div className="ml-2 h-5 flex-1 rounded-md bg-surface-sunken px-2 text-[10.5px] text-ink-subtle font-mono flex items-center truncate">
+              {new URL(product.link).host.replace(/^www\./, "")}
+            </div>
+          </div>
+          <div className="relative aspect-[4/3] bg-white overflow-hidden">
+            <ProductMockup slug={product.slug} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function CaseBlock({
   label,
   content,
@@ -232,10 +277,13 @@ function OtherProducts({ currentSlug }: { currentSlug: string }) {
               href={`/work/${p.slug}`}
               className="group flex flex-col rounded-2xl bg-surface-raised ring-1 ring-surface-border p-6 hover:ring-ink/25 transition-all"
             >
-              <span className="font-mono text-[11.5px] text-ink-subtle">
-                {new URL(p.link).host}
-              </span>
-              <h3 className="mt-3 text-[18px] font-medium tracking-tight text-ink">
+              <div className="flex items-center gap-3">
+                <ProductMark product={p} size={36} />
+                <span className="font-mono text-[11.5px] text-ink-subtle">
+                  {new URL(p.link).host.replace(/^www\./, "")}
+                </span>
+              </div>
+              <h3 className="mt-5 text-[18px] font-medium tracking-tight text-ink">
                 {p.name}
               </h3>
               <p className="mt-2 text-[13.5px] leading-relaxed text-ink-muted">

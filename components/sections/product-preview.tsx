@@ -1,22 +1,16 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { Product } from "@/data/products";
 import { cn } from "@/lib/utils";
-
-const accentClasses: Record<Product["accent"], string> = {
-  blue: "bg-brand/[0.08] text-brand ring-brand/15",
-  emerald: "bg-emerald-500/10 text-emerald-700 ring-emerald-600/15",
-  violet: "bg-violet-500/10 text-violet-700 ring-violet-600/15",
-  amber: "bg-amber-500/10 text-amber-700 ring-amber-600/15",
-  slate: "bg-ink/[0.06] text-ink ring-ink/15",
-};
+import { ProductMockup } from "@/components/product-ui";
 
 const accentBg: Record<Product["accent"], string> = {
-  blue: "from-brand/[0.06] to-transparent",
-  emerald: "from-emerald-500/[0.07] to-transparent",
-  violet: "from-violet-500/[0.07] to-transparent",
-  amber: "from-amber-500/[0.08] to-transparent",
-  slate: "from-ink/[0.04] to-transparent",
+  blue: "from-brand/[0.07] via-brand/[0.02] to-transparent",
+  emerald: "from-emerald-500/[0.08] via-emerald-500/[0.02] to-transparent",
+  violet: "from-violet-500/[0.08] via-violet-500/[0.02] to-transparent",
+  amber: "from-amber-500/[0.09] via-amber-500/[0.02] to-transparent",
+  slate: "from-ink/[0.05] via-ink/[0.015] to-transparent",
 };
 
 export function ProductPreview({
@@ -28,7 +22,7 @@ export function ProductPreview({
   size?: "md" | "lg";
   className?: string;
 }) {
-  const host = new URL(product.link).host;
+  const host = new URL(product.link).host.replace(/^www\./, "");
   return (
     <Link
       href={`/work/${product.slug}`}
@@ -41,7 +35,7 @@ export function ProductPreview({
         className={cn(
           "relative w-full",
           size === "lg"
-            ? "aspect-[16/7] sm:aspect-[16/6]"
+            ? "aspect-[16/8] sm:aspect-[16/7]"
             : "aspect-[16/10]",
         )}
       >
@@ -60,25 +54,18 @@ export function ProductPreview({
           size === "lg" && "md:p-8",
         )}
       >
-        <div className="min-w-0">
-          <div className="flex items-center gap-2.5">
-            <h3 className="text-[19px] md:text-[21px] font-medium tracking-tight text-ink">
+        <div className="flex items-start gap-4 min-w-0">
+          <ProductMark product={product} />
+          <div className="min-w-0">
+            <h3 className="text-[19px] md:text-[21px] font-medium tracking-tight text-ink leading-tight">
               {product.name}
             </h3>
-            <span
-              className={cn(
-                "inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-medium ring-1",
-                accentClasses[product.accent],
-              )}
-            >
-              {host}
-            </span>
+            <p className="mt-1.5 text-[14px] text-ink-muted leading-relaxed">
+              {product.tagline}
+            </p>
           </div>
-          <p className="mt-2 text-[14.5px] text-ink-muted leading-relaxed">
-            {product.tagline}
-          </p>
         </div>
-        <div className="shrink-0 inline-flex items-center gap-1 text-[13px] font-medium text-ink-muted group-hover:text-brand transition-colors">
+        <div className="shrink-0 inline-flex items-center gap-1 text-[13px] font-medium text-ink-muted group-hover:text-brand transition-colors pt-1">
           Case study
           <ArrowUpRight
             size={14}
@@ -91,60 +78,57 @@ export function ProductPreview({
   );
 }
 
-function BrowserFrame({ product, host }: { product: Product; host: string }) {
+function BrowserFrame({
+  product,
+  host,
+}: {
+  product: Product;
+  host: string;
+}) {
   return (
-    <div className="absolute inset-6 md:inset-10 rounded-xl bg-surface-raised ring-1 ring-surface-border shadow-raised overflow-hidden">
-      <div className="flex items-center gap-2 px-3 py-2 border-b border-surface-border bg-surface">
-        <div className="flex gap-1.5">
+    <div className="absolute inset-5 md:inset-8 rounded-xl bg-surface-raised ring-1 ring-surface-border shadow-raised overflow-hidden flex flex-col">
+      <div className="relative flex items-center px-3 py-2 border-b border-surface-border bg-surface">
+        <div className="flex gap-1.5 z-[1]">
           <span className="h-2.5 w-2.5 rounded-full bg-surface-border" />
           <span className="h-2.5 w-2.5 rounded-full bg-surface-border" />
           <span className="h-2.5 w-2.5 rounded-full bg-surface-border" />
         </div>
-        <div className="ml-2 h-5 flex-1 rounded-md bg-surface-sunken px-2 text-[10.5px] text-ink-subtle font-mono flex items-center truncate">
-          {host}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-5 w-[min(240px,calc(100%-5.5rem))] rounded-md bg-surface-sunken px-2 text-[10.5px] text-ink-subtle font-mono flex items-center justify-center">
+          <span className="truncate">{host}</span>
         </div>
       </div>
-      <div className="relative h-full flex items-center justify-center p-6">
-        <ProductGlyph accent={product.accent} label={product.name} />
+      <div className="relative flex-1 overflow-hidden bg-white">
+        <ProductMockup slug={product.slug} />
       </div>
     </div>
   );
 }
 
-const accentFill: Record<Product["accent"], string> = {
-  blue: "#145dfd",
-  emerald: "#059669",
-  violet: "#7c3aed",
-  amber: "#d97706",
-  slate: "#0b0d10",
-};
-
-function ProductGlyph({
-  accent,
-  label,
+export function ProductMark({
+  product,
+  size = 44,
+  className,
 }: {
-  accent: Product["accent"];
-  label: string;
+  product: Product;
+  size?: number;
+  className?: string;
 }) {
-  const color = accentFill[accent];
-  const initials = label.slice(0, 2).toUpperCase();
   return (
-    <div className="flex items-center gap-4">
-      <div
-        className="flex h-14 w-14 items-center justify-center rounded-xl text-white text-[17px] font-semibold tracking-tight"
-        style={{ backgroundColor: color }}
-        aria-hidden
-      >
-        {initials}
-      </div>
-      <div className="flex flex-col gap-1.5">
-        <div
-          className="h-2.5 w-32 rounded-full"
-          style={{ backgroundColor: color, opacity: 0.2 }}
-        />
-        <div className="h-2.5 w-24 rounded-full bg-surface-sunken" />
-        <div className="h-2.5 w-20 rounded-full bg-surface-sunken" />
-      </div>
+    <div
+      className={cn(
+        "shrink-0 rounded-xl bg-surface-sunken ring-1 ring-surface-border overflow-hidden flex items-center justify-center",
+        className,
+      )}
+      style={{ width: size, height: size }}
+      aria-hidden
+    >
+      <Image
+        src={product.logo}
+        alt=""
+        width={size}
+        height={size}
+        className="h-[72%] w-[72%] object-contain"
+      />
     </div>
   );
 }
