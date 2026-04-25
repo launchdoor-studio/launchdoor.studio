@@ -14,7 +14,9 @@ export function Logo({
   size?: number;
 }) {
   const src =
-    variant === "blue" ? "/logos/growvth-blue.svg" : "/logos/growvth-white.svg";
+    variant === "blue"
+      ? "/logos/launchdoor-blue.svg"
+      : "/logos/launchdoor-white.svg";
   return (
     <Link
       href="/"
@@ -22,7 +24,7 @@ export function Logo({
         "group inline-flex items-center gap-2.5 rounded-md",
         className,
       )}
-      aria-label="Growvth home"
+      aria-label="Launchdoor home"
     >
       <Image
         src={src}
@@ -39,7 +41,7 @@ export function Logo({
             variant === "white" ? "text-white" : "text-ink",
           )}
         >
-          Growvth
+          Launchdoor
         </span>
       ) : null}
     </Link>

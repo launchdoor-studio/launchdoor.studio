@@ -49,7 +49,7 @@ export const primaryNav: NavGroup[] = [
       {
         label: "Products",
         href: "/work",
-        description: "Products built and shipped by Growvth.",
+        description: "Products built and shipped by Launchdoor.",
       },
       {
         label: "Botttle",

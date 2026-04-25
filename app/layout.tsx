@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import {
-  Inter,
   JetBrains_Mono,
+  Bricolage_Grotesque,
   Instrument_Serif,
   Fraunces,
 } from "next/font/google";
@@ -10,7 +10,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import "./globals.css";
 
-const sans = Inter({
+const sans = Bricolage_Grotesque({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    "Growvth",
+    "Launchdoor",
     "software studio",
     "product development",
     "web applications",
@@ -68,8 +68,8 @@ export const metadata: Metadata = {
     description: siteConfig.description,
   },
   icons: {
-    icon: "/logos/growvth-blue.svg",
-    apple: "/logos/growvth-blue.svg",
+    icon: "/logos/launchdoor-blue.svg",
+    apple: "/logos/launchdoor-blue.svg",
   },
 };
 

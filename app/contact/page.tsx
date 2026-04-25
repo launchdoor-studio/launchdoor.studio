@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Have an idea, product, or business problem worth solving? Let’s talk about how Growvth can help you build it.",
+    "Have an idea, product, or business problem worth solving? Let’s talk about how Launchdoor can help you build it.",
   alternates: { canonical: "/contact" },
 };
 

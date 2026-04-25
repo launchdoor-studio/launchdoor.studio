@@ -31,9 +31,11 @@ const budgets = [
 
 export function ContactForm() {
   const [form, setForm] = useState<FormState>(initial);
+  const [honeypot, setHoneypot] = useState("");
   const [status, setStatus] = useState<
     "idle" | "submitting" | "success" | "error"
   >("idle");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>(
     {},
   );
@@ -59,13 +61,35 @@ export function ContactForm() {
     e.preventDefault();
     if (!validate()) return;
     setStatus("submitting");
+    setErrorMessage(null);
 
     try {
-      // Placeholder: wire up to an API route or email service when ready.
-      await new Promise((r) => setTimeout(r, 700));
-      setStatus("success");
-      setForm(initial);
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, website: honeypot }),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        setForm(initial);
+        setHoneypot("");
+        return;
+      }
+
+      let message = "Something went wrong. Please email hello@launchdoor.studio.";
+      try {
+        const data = (await res.json()) as { error?: string };
+        if (data?.error) message = data.error;
+      } catch {
+        /* keep default */
+      }
+      setErrorMessage(message);
+      setStatus("error");
     } catch {
+      setErrorMessage(
+        "Couldn’t reach our server. Please email hello@launchdoor.studio.",
+      );
       setStatus("error");
     }
   }
@@ -180,6 +204,22 @@ export function ContactForm() {
         />
       </div>
 
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-[9999px] top-auto h-0 w-0 overflow-hidden"
+      >
+        <label>
+          Do not fill this out
+          <input
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+          />
+        </label>
+      </div>
+
       <div className="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <p className="text-[12.5px] text-ink-subtle">
           We respond within one business day.
@@ -196,9 +236,13 @@ export function ContactForm() {
         </button>
       </div>
 
-      {status === "error" ? (
-        <p className="mt-4 text-[13px] text-red-600">
-          Something went wrong. Please email us directly at hello@growvth.com.
+      {status === "error" && errorMessage ? (
+        <p
+          role="alert"
+          aria-live="polite"
+          className="mt-4 text-[13px] text-red-600"
+        >
+          {errorMessage}
         </p>
       ) : null}
     </form>

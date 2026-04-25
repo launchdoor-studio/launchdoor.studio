@@ -14,7 +14,7 @@ export function Footer() {
           <div className="md:col-span-5 max-w-md">
             <Logo variant="white" />
             <p className="mt-5 text-[15px] leading-relaxed text-white/70">
-              Growvth builds modern products, apps, and AI systems for
+              Launchdoor builds modern products, apps, and AI systems for
               businesses that want to move fast.
             </p>
             <div className="mt-6 flex flex-col gap-1.5 text-[13.5px]">

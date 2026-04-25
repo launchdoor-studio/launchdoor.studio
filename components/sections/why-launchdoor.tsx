@@ -1,16 +1,16 @@
 import { Check } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
-import { whyGrowvth } from "@/data/capabilities";
+import { whyLaunchdoor } from "@/data/capabilities";
 
-export function WhyGrowvth() {
+export function WhyLaunchdoor() {
   return (
     <section className="py-20 md:py-28">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
             <SectionHeader
-              eyebrow="Why Growvth"
+              eyebrow="Why Launchdoor"
               title={
                 <>
                   Engineering partners who
@@ -27,7 +27,7 @@ export function WhyGrowvth() {
 
           <div className="md:col-span-7">
             <ul className="divide-y divide-surface-border">
-              {whyGrowvth.map((item) => (
+              {whyLaunchdoor.map((item) => (
                 <li
                   key={item}
                   className="flex items-start gap-4 py-4 first:pt-0 last:pb-0"

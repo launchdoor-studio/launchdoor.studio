@@ -7,7 +7,7 @@ import { ContactCTA } from "@/components/sections/contact-cta";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Products, tools, and systems built by Growvth. Each one started as a problem worth solving.",
+    "Products, tools, and systems built by Launchdoor. Each one started as a problem worth solving.",
   alternates: { canonical: "/work" },
 };
 
@@ -26,7 +26,7 @@ export default function WorkPage() {
               .
             </h1>
             <p className="mt-5 text-[16px] leading-relaxed text-ink-muted text-pretty">
-              Every product below is live, maintained, and built by Growvth. We
+              Every product below is live, maintained, and built by Launchdoor. We
               continuously build and test new tools in AI, productivity,
               automation, and business software.
             </p>

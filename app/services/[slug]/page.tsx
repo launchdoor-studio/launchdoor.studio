@@ -206,7 +206,7 @@ export default async function ServicePage({
                 trend cycles.
               </p>
             </div>
-            <div className="md:col-span-7 flex flex-wrap gap-2">
+            <div className="md:col-span-7 flex flex-wrap items-start content-start gap-2">
               {service.stack.map((t) => (
                 <span
                   key={t}

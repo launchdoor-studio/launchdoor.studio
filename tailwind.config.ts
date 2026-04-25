@@ -56,16 +56,16 @@ const config: Config = {
       },
       fontSize: {
         "display-xl": [
-          "clamp(2rem, 5.2vw, 4.5rem)",
-          { lineHeight: "1.06", letterSpacing: "-0.035em" },
+          "clamp(1.7rem, 4.2vw, 3.75rem)",
+          { lineHeight: "1.04", letterSpacing: "-0.04em" },
         ],
         "display-lg": [
-          "clamp(1.75rem, 4vw, 3.5rem)",
-          { lineHeight: "1.08", letterSpacing: "-0.03em" },
+          "clamp(1.6rem, 3.6vw, 3.1rem)",
+          { lineHeight: "1.06", letterSpacing: "-0.035em" },
         ],
         "display-md": [
-          "clamp(1.4rem, 2.6vw, 2.5rem)",
-          { lineHeight: "1.18", letterSpacing: "-0.02em" },
+          "clamp(1.3rem, 2.4vw, 2.25rem)",
+          { lineHeight: "1.15", letterSpacing: "-0.025em" },
         ],
         "eyebrow": [
           "0.75rem",

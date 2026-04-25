@@ -11,7 +11,7 @@ export function FeaturedWork() {
       <Container>
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
           <SectionHeader
-            eyebrow="Products by Growvth"
+            eyebrow="Products by Launchdoor"
             title={
               <>
                 Real products. Shipped,
@@ -22,7 +22,7 @@ export function FeaturedWork() {
                 .
               </>
             }
-            description="Everything below is live software, built and maintained by Growvth. Each one started as a problem we wanted to solve ourselves."
+            description="Everything below is live software, built and maintained by Launchdoor. Each one started as a problem we wanted to solve ourselves."
           />
           <Link
             href="/work"

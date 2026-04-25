@@ -7,7 +7,7 @@ export const capabilities = [
   "Product Design & Development",
 ] as const;
 
-export const whyGrowvth = [
+export const whyLaunchdoor = [
   "Product-minded execution, not just coding",
   "Fast communication and founder-level ownership",
   "Clean, scalable engineering practices",

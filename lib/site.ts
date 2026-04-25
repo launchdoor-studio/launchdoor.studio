@@ -1,11 +1,11 @@
 export const siteConfig = {
-  name: "Growvth",
-  domain: "growvth.com",
-  url: "https://growvth.com",
+  name: "Launchdoor",
+  domain: "launchdoor.studio",
+  url: "https://launchdoor.studio",
   description:
-    "Growvth is a modern software studio building products, apps, and AI systems for businesses that want to move fast.",
+    "Launchdoor is a modern software studio building products, apps, and AI systems for businesses that want to move fast.",
   tagline: "A modern software studio.",
-  email: "hello@growvth.com",
+  email: "hello@launchdoor.studio",
   altEmail: "aftaab@aftaab.dev",
   social: {
     github: "https://github.com/",

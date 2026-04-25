@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/sections/hero";
 import { ServicesGrid } from "@/components/sections/services-grid";
 import { FeaturedWork } from "@/components/sections/featured-work";
-import { WhyGrowvth } from "@/components/sections/why-growvth";
+import { WhyLaunchdoor } from "@/components/sections/why-launchdoor";
 import { Process } from "@/components/sections/process";
 import { Audience } from "@/components/sections/audience";
 import { ContactCTA } from "@/components/sections/contact-cta";
@@ -20,7 +20,7 @@ export default function HomePage() {
       <Hero />
       <ServicesGrid />
       <FeaturedWork />
-      <WhyGrowvth />
+      <WhyLaunchdoor />
       <Process />
       <Audience />
       <ContactCTA />

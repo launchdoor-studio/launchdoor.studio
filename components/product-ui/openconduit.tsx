@@ -98,7 +98,7 @@ function InstallTerminal() {
           <span className="text-[#fbbf24]">$</span>{" "}
           <span className="text-[#fbbf24]">git</span> clone{" "}
           <span className="text-[#e5e7eb]">
-            https://github.com/growvth/openconduit.git
+            https://github.com/launchdoor/openconduit.git
           </span>
         </div>
         <div>

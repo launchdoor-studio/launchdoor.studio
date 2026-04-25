@@ -261,7 +261,7 @@ function OtherProducts({ currentSlug }: { currentSlug: string }) {
     <section className="py-14 md:py-20">
       <Container>
         <div className="flex items-end justify-between mb-10">
-          <h2 className="text-display-md">More from Growvth</h2>
+          <h2 className="text-display-md">More from Launchdoor</h2>
           <Link
             href="/work"
             className="inline-flex items-center gap-1.5 text-[13.5px] text-ink-muted hover:text-brand transition-colors"

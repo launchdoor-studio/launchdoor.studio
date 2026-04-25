@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
-import { whyGrowvth, audience, techCapability } from "@/data/capabilities";
+import { whyLaunchdoor, audience, techCapability } from "@/data/capabilities";
 import { ContactCTA } from "@/components/sections/contact-cta";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Growvth is an independent software studio focused on building useful products and helping ambitious businesses move faster through technology.",
+    "Launchdoor is an independent software studio focused on building useful products and helping ambitious businesses move faster through technology.",
   alternates: { canonical: "/about" },
 };
 
@@ -18,7 +18,7 @@ export default function AboutPage() {
       <section className="pt-20 md:pt-28 pb-14 md:pb-16">
         <Container>
           <div className="max-w-3xl">
-            <span className="eyebrow">About Growvth</span>
+            <span className="eyebrow">About Launchdoor</span>
             <h1 className="mt-5 text-display-lg text-balance">
               An independent software studio building useful{" "}
               <span className="font-display italic font-normal text-brand">
@@ -27,7 +27,7 @@ export default function AboutPage() {
               .
             </h1>
             <p className="mt-6 text-[16.5px] leading-relaxed text-ink-muted text-pretty">
-              Growvth is an independent software studio focused on building
+              Launchdoor is an independent software studio focused on building
               useful products and helping ambitious businesses move faster
               through technology.
             </p>
@@ -68,7 +68,7 @@ export default function AboutPage() {
             </div>
             <div className="md:col-span-7">
               <ul className="divide-y divide-surface-border">
-                {whyGrowvth.map((item) => (
+                {whyLaunchdoor.map((item) => (
                   <li
                     key={item}
                     className="flex items-start gap-4 py-4 first:pt-0 last:pb-0"

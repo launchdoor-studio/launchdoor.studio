@@ -35,7 +35,7 @@ export function ContactCTA() {
                 ?
               </h2>
               <p className="mt-5 max-w-xl text-[15.5px] leading-relaxed text-white/70">
-                Let’s talk about how Growvth can help you build it. Tell us
+                Let’s talk about how Launchdoor can help you build it. Tell us
                 about your goals and we’ll get back within one business day.
               </p>
             </div>

@@ -25,7 +25,7 @@ const iconFor: Record<string, LucideIcon> = {
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Product development, web applications, mobile apps, AI systems, MVP launches, and dedicated build partnerships by Growvth.",
+    "Product development, web applications, mobile apps, AI systems, MVP launches, and dedicated build partnerships by Launchdoor.",
   alternates: { canonical: "/services" },
 };
 
