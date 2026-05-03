@@ -60,7 +60,7 @@ export default async function ServicePage({
 
   return (
     <>
-      <section className="pt-16 md:pt-20 pb-6">
+      <section className="pt-10 sm:pt-12 md:pt-20 pb-4 md:pb-6">
         <Container>
           <Link
             href="/services"
@@ -72,7 +72,7 @@ export default async function ServicePage({
         </Container>
       </section>
 
-      <section className="pb-14 md:pb-16">
+      <section className="pb-10 md:pb-16">
         <Container>
           <div className="max-w-3xl">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand/10 text-brand">
@@ -103,9 +103,9 @@ export default async function ServicePage({
         </Container>
       </section>
 
-      <section className="py-14 md:py-20">
+      <section className="py-12 md:py-20">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
             <div className="md:col-span-5">
               <span className="eyebrow">Outcomes</span>
               <h2 className="mt-5 text-display-md text-balance">
@@ -133,9 +133,9 @@ export default async function ServicePage({
         </Container>
       </section>
 
-      <section className="py-14 md:py-20 bg-surface-sunken/60">
+      <section className="py-12 md:py-20 bg-surface-sunken/60">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
             <div className="md:col-span-5">
               <span className="eyebrow">Deliverables</span>
               <h2 className="mt-5 text-display-md text-balance">
@@ -158,9 +158,9 @@ export default async function ServicePage({
         </Container>
       </section>
 
-      <section className="py-14 md:py-20">
+      <section className="py-12 md:py-20">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
             <div className="md:col-span-5">
               <span className="eyebrow">Process</span>
               <h2 className="mt-5 text-display-md text-balance">
@@ -172,16 +172,16 @@ export default async function ServicePage({
                 {process.map((step) => (
                   <li
                     key={step.step}
-                    className="flex items-start gap-6 py-5 first:pt-0"
+                    className="flex items-start gap-4 sm:gap-6 py-5 first:pt-0"
                   >
                     <span className="font-mono text-[12.5px] text-brand tracking-tight shrink-0 pt-0.5">
                       / {step.step}
                     </span>
-                    <div>
-                      <h3 className="text-[16px] font-medium text-ink">
+                    <div className="min-w-0">
+                      <h3 className="text-[15.5px] sm:text-[16px] font-medium text-ink">
                         {step.title}
                       </h3>
-                      <p className="mt-1 text-[14px] leading-relaxed text-ink-muted">
+                      <p className="mt-1 text-[13.5px] sm:text-[14px] leading-relaxed text-ink-muted">
                         {step.description}
                       </p>
                     </div>
@@ -193,9 +193,9 @@ export default async function ServicePage({
         </Container>
       </section>
 
-      <section className="py-14 md:py-20 bg-surface-sunken/60">
+      <section className="py-12 md:py-20 bg-surface-sunken/60">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
             <div className="md:col-span-5">
               <span className="eyebrow">Typical stack</span>
               <h2 className="mt-5 text-display-md text-balance">
@@ -220,9 +220,9 @@ export default async function ServicePage({
         </Container>
       </section>
 
-      <section className="py-14 md:py-20">
+      <section className="py-12 md:py-20">
         <Container>
-          <div className="flex items-end justify-between mb-10">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 md:mb-10">
             <h2 className="text-display-md">Other services</h2>
             <Link
               href="/services"

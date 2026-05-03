@@ -4,7 +4,7 @@ import { audience } from "@/data/capabilities";
 
 export function Audience() {
   return (
-    <section className="py-20 md:py-24">
+    <section className="py-14 md:py-24">
       <Container>
         <SectionHeader
           eyebrow="Who we work with"
@@ -20,7 +20,7 @@ export function Audience() {
           }
         />
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div className="mt-10 md:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {audience.map((a, i) => (
             <div
               key={a.title}

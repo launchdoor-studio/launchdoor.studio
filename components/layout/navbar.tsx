@@ -124,54 +124,56 @@ export function Navbar() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-40 transition-colors duration-300",
-        scrolled
-          ? "bg-surface/85 backdrop-blur-md border-b border-surface-border"
-          : "bg-transparent border-b border-transparent",
-      )}
-    >
-      <Container className="flex h-16 items-center justify-between">
-        <Logo />
+    <>
+      <header
+        className={cn(
+          "sticky top-0 z-40 transition-colors duration-300",
+          scrolled
+            ? "bg-surface/85 backdrop-blur-md border-b border-surface-border"
+            : "bg-transparent border-b border-transparent",
+        )}
+      >
+        <Container className="flex h-16 items-center justify-between">
+          <Logo />
 
-        <nav className="hidden md:flex items-center gap-1">
-          {primaryNav.map((group) =>
-            group.items ? (
-              <NavDropdown
-                key={group.label}
-                group={group}
-                active={isActive(group.href ?? "#")}
-              />
-            ) : (
-              <NavLink
-                key={group.label}
-                href={group.href!}
-                label={group.label}
-                active={isActive(group.href!)}
-              />
-            ),
-          )}
-        </nav>
+          <nav className="hidden md:flex items-center gap-1">
+            {primaryNav.map((group) =>
+              group.items ? (
+                <NavDropdown
+                  key={group.label}
+                  group={group}
+                  active={isActive(group.href ?? "#")}
+                />
+              ) : (
+                <NavLink
+                  key={group.label}
+                  href={group.href!}
+                  label={group.label}
+                  active={isActive(group.href!)}
+                />
+              ),
+            )}
+          </nav>
 
-        <div className="hidden md:flex items-center gap-2">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-[13px] font-medium text-white hover:bg-ink-soft transition-colors"
+          <div className="hidden md:flex items-center gap-2">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-[13px] font-medium text-white hover:bg-ink-soft transition-colors"
+            >
+              Start a Project
+            </Link>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setMobileOpen(true)}
+            className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-ink hover:bg-surface-sunken"
+            aria-label="Open menu"
           >
-            Start a Project
-          </Link>
-        </div>
-
-        <button
-          type="button"
-          onClick={() => setMobileOpen(true)}
-          className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-ink hover:bg-surface-sunken"
-          aria-label="Open menu"
-        >
-          <Menu size={20} strokeWidth={1.75} />
-        </button>
-      </Container>
+            <Menu size={20} strokeWidth={1.75} />
+          </button>
+        </Container>
+      </header>
 
       <AnimatePresence>
         {mobileOpen ? (
@@ -180,7 +182,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.18 }}
-            className="fixed inset-0 z-50 md:hidden"
+            className="fixed inset-0 z-[100] md:hidden"
           >
             <div
               className="absolute inset-0 bg-ink/40"
@@ -191,9 +193,9 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute right-0 top-0 h-full w-[88%] max-w-sm bg-surface shadow-raised flex flex-col"
+              className="absolute right-0 top-0 bottom-0 w-[88%] max-w-sm bg-surface shadow-raised flex flex-col"
             >
-              <div className="h-16 px-5 flex items-center justify-between border-b border-surface-border">
+              <div className="h-16 shrink-0 px-5 flex items-center justify-between border-b border-surface-border">
                 <Logo />
                 <button
                   onClick={() => setMobileOpen(false)}
@@ -203,7 +205,7 @@ export function Navbar() {
                   <X size={20} strokeWidth={1.75} />
                 </button>
               </div>
-              <div className="flex-1 overflow-y-auto px-3 py-4">
+              <div className="flex-1 min-h-0 overflow-y-auto px-3 py-4">
                 {primaryNav.map((group) => (
                   <div key={group.label} className="mb-2">
                     {group.href ? (
@@ -234,7 +236,7 @@ export function Navbar() {
                   </div>
                 ))}
               </div>
-              <div className="border-t border-surface-border p-4">
+              <div className="shrink-0 border-t border-surface-border p-4">
                 <Link
                   href="/contact"
                   className="flex items-center justify-center rounded-full bg-ink px-5 py-3 text-sm font-medium text-white"
@@ -246,6 +248,6 @@ export function Navbar() {
           </motion.div>
         ) : null}
       </AnimatePresence>
-    </header>
+    </>
   );
 }

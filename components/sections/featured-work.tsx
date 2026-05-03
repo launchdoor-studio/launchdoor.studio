@@ -7,9 +7,9 @@ import { ProductPreview } from "@/components/sections/product-preview";
 
 export function FeaturedWork() {
   return (
-    <section className="py-20 md:py-28 bg-surface-sunken/60">
+    <section className="py-14 md:py-28 bg-surface-sunken/60">
       <Container>
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-8">
           <SectionHeader
             eyebrow="Products by Launchdoor"
             title={
@@ -33,7 +33,7 @@ export function FeaturedWork() {
           </Link>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-2 gap-3">
           {products.map((product, i) => (
             <ProductPreview
               key={product.slug}

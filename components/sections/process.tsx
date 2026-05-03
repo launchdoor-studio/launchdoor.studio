@@ -4,7 +4,7 @@ import { process } from "@/data/capabilities";
 
 export function Process() {
   return (
-    <section className="py-20 md:py-28 bg-surface-sunken/60">
+    <section className="py-14 md:py-28 bg-surface-sunken/60">
       <Container>
         <SectionHeader
           eyebrow="How we work"
@@ -22,7 +22,7 @@ export function Process() {
           description="Clear steps, honest timelines, and regular updates. No surprises."
         />
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div className="mt-10 md:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {process.map((step) => (
             <div
               key={step.step}

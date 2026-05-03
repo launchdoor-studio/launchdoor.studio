@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="pt-20 md:pt-28 pb-14 md:pb-16">
+      <section className="pt-12 sm:pt-16 md:pt-28 pb-10 md:pb-16">
         <Container>
           <div className="max-w-3xl">
             <span className="eyebrow">About Launchdoor</span>
@@ -39,7 +39,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="py-16 md:py-20">
+      <section className="py-10 md:py-20">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <Stat label="Real products shipped" value="5+" caption="and counting" />
@@ -57,9 +57,9 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="py-16 md:py-24 bg-surface-sunken/60">
+      <section className="py-12 md:py-24 bg-surface-sunken/60">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
             <div className="md:col-span-5">
               <span className="eyebrow">Principles</span>
               <h2 className="mt-5 text-display-md text-balance">
@@ -87,9 +87,9 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-24">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
             <div className="md:col-span-5">
               <span className="eyebrow">Who we work with</span>
               <h2 className="mt-5 text-display-md text-balance">
@@ -115,9 +115,9 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="py-16 md:py-24 bg-surface-sunken/60">
+      <section className="py-12 md:py-24 bg-surface-sunken/60">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
             <div className="md:col-span-5">
               <span className="eyebrow">Capability</span>
               <h2 className="mt-5 text-display-md text-balance">
@@ -166,14 +166,14 @@ function Stat({
   caption: string;
 }) {
   return (
-    <div className="flex flex-col rounded-2xl bg-surface-raised ring-1 ring-surface-border p-6 md:p-7">
+    <div className="flex flex-col rounded-2xl bg-surface-raised ring-1 ring-surface-border p-5 sm:p-6 md:p-7">
       <span className="font-mono text-[11.5px] uppercase tracking-[0.14em] text-ink-subtle">
         {label}
       </span>
-      <span className="mt-6 text-[34px] md:text-[40px] font-medium tracking-tight text-ink leading-none">
+      <span className="mt-5 sm:mt-6 text-[28px] sm:text-[34px] md:text-[40px] font-medium tracking-tight text-ink leading-none">
         {value}
       </span>
-      <span className="mt-3 text-[13.5px] text-ink-muted leading-relaxed">
+      <span className="mt-3 text-[13px] sm:text-[13.5px] text-ink-muted leading-relaxed">
         {caption}
       </span>
     </div>

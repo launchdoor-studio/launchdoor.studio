@@ -5,9 +5,9 @@ import { whyLaunchdoor } from "@/data/capabilities";
 
 export function WhyLaunchdoor() {
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-14 md:py-28">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
           <div className="md:col-span-5">
             <SectionHeader
               eyebrow="Why Launchdoor"

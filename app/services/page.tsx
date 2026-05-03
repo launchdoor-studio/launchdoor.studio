@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 export default function ServicesIndexPage() {
   return (
     <>
-      <section className="pt-20 md:pt-28 pb-14 md:pb-16">
+      <section className="pt-12 sm:pt-16 md:pt-28 pb-10 md:pb-16">
         <Container>
           <div className="max-w-3xl">
             <span className="eyebrow">Services</span>
@@ -52,7 +52,7 @@ export default function ServicesIndexPage() {
         </Container>
       </section>
 
-      <section className="pb-16 md:pb-20">
+      <section className="pb-12 md:pb-20">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {services.map((s) => {
@@ -61,7 +61,7 @@ export default function ServicesIndexPage() {
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}`}
-                  className="group flex flex-col rounded-2xl bg-surface-raised ring-1 ring-surface-border p-7 md:p-9 hover:ring-ink/25 transition-all"
+                  className="group flex flex-col rounded-2xl bg-surface-raised ring-1 ring-surface-border p-6 sm:p-7 md:p-9 hover:ring-ink/25 transition-all"
                 >
                   <div className="flex items-start justify-between">
                     <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand/10 text-brand">
@@ -73,13 +73,13 @@ export default function ServicesIndexPage() {
                       className="text-ink-subtle group-hover:text-brand group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
                     />
                   </div>
-                  <h2 className="mt-8 text-[22px] font-medium tracking-tight text-ink">
+                  <h2 className="mt-6 sm:mt-8 text-[20px] sm:text-[22px] font-medium tracking-tight text-ink">
                     {s.title}
                   </h2>
-                  <p className="mt-2 text-[14.5px] leading-relaxed text-ink-muted max-w-md">
+                  <p className="mt-2 text-[14px] sm:text-[14.5px] leading-relaxed text-ink-muted max-w-md">
                     {s.summary}
                   </p>
-                  <div className="mt-6 flex flex-wrap gap-1.5">
+                  <div className="mt-5 sm:mt-6 flex flex-wrap gap-1.5">
                     {s.stack.slice(0, 4).map((t) => (
                       <span
                         key={t}
@@ -96,9 +96,9 @@ export default function ServicesIndexPage() {
         </Container>
       </section>
 
-      <section className="py-20 md:py-24 bg-surface-sunken/60">
+      <section className="py-14 md:py-24 bg-surface-sunken/60">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
             <div className="md:col-span-5">
               <span className="eyebrow">Capability</span>
               <h2 className="mt-5 text-display-md text-balance">

@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/container";
 
 export default function NotFound() {
   return (
-    <section className="pt-28 md:pt-36 pb-24">
+    <section className="pt-16 sm:pt-24 md:pt-36 pb-16 md:pb-24">
       <Container>
         <div className="max-w-xl">
           <span className="eyebrow">404</span>

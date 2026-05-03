@@ -42,7 +42,7 @@ export default async function ProductCaseStudy({
 
   return (
     <>
-      <section className="pt-16 md:pt-20 pb-6">
+      <section className="pt-10 sm:pt-12 md:pt-20 pb-4 md:pb-6">
         <Container>
           <Link
             href="/work"
@@ -54,22 +54,22 @@ export default async function ProductCaseStudy({
         </Container>
       </section>
 
-      <section className="pb-14">
+      <section className="pb-12 md:pb-14">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
-            <div className="md:col-span-7">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-start">
+            <div className="md:col-span-7 min-w-0">
               <div className="flex items-center gap-3">
-                <ProductMark product={product} size={52} />
-                <div className="flex flex-col">
-                  <h1 className="text-display-lg text-balance leading-[1.02]">
+                <ProductMark product={product} size={48} />
+                <div className="flex flex-col min-w-0">
+                  <h1 className="text-display-lg text-balance leading-[1.02] break-words">
                     {product.name}
                   </h1>
                 </div>
               </div>
-              <p className="mt-5 font-display italic text-[22px] md:text-[24px] text-ink-muted leading-snug">
+              <p className="mt-5 font-display italic text-[19px] sm:text-[22px] md:text-[24px] text-ink-muted leading-snug">
                 {product.tagline}
               </p>
-              <div className="mt-6 flex flex-wrap items-center gap-2 text-[12.5px]">
+              <div className="mt-6 flex flex-wrap items-center gap-2 text-[12px] sm:text-[12.5px]">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-brand/10 px-2.5 py-1 text-brand font-medium">
                   <span className="h-1.5 w-1.5 rounded-full bg-brand" />
                   {product.status}
@@ -78,13 +78,13 @@ export default async function ProductCaseStudy({
                   href={product.link}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="inline-flex items-center gap-1 rounded-full bg-surface-raised ring-1 ring-surface-border px-2.5 py-1 text-ink-muted font-mono hover:text-brand transition-colors"
+                  className="inline-flex items-center gap-1 rounded-full bg-surface-raised ring-1 ring-surface-border px-2.5 py-1 text-ink-muted font-mono hover:text-brand transition-colors max-w-full truncate"
                 >
-                  {host}
-                  <ArrowUpRight size={12} strokeWidth={2} />
+                  <span className="truncate">{host}</span>
+                  <ArrowUpRight size={12} strokeWidth={2} className="shrink-0" />
                 </a>
               </div>
-              <p className="mt-8 max-w-2xl text-[16.5px] leading-relaxed text-ink-muted text-pretty">
+              <p className="mt-7 sm:mt-8 max-w-2xl text-[15.5px] sm:text-[16.5px] leading-relaxed text-ink-muted text-pretty">
                 {product.overview}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
@@ -113,9 +113,9 @@ export default async function ProductCaseStudy({
         </Container>
       </section>
 
-      <section className="py-14 md:py-20">
+      <section className="py-12 md:py-20">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
             <div className="md:col-span-4">
               <span className="eyebrow">Key features</span>
               <h2 className="mt-5 text-display-md text-balance">
@@ -150,10 +150,10 @@ export default async function ProductCaseStudy({
         </Container>
       </section>
 
-      <section className="py-14 md:py-20 bg-surface-sunken/60">
+      <section className="py-12 md:py-20 bg-surface-sunken/60">
         <Container>
           <span className="eyebrow">Case study</span>
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div className="mt-6 md:mt-8 grid grid-cols-1 md:grid-cols-3 gap-3">
             <CaseBlock label="Challenge" content={product.caseStudy.challenge} />
             <CaseBlock label="Solution" content={product.caseStudy.solution} />
             <CaseBlock label="Impact" content={product.caseStudy.impact} />
@@ -161,9 +161,9 @@ export default async function ProductCaseStudy({
         </Container>
       </section>
 
-      <section className="py-14 md:py-20">
+      <section className="py-12 md:py-20">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
             <div className="md:col-span-4">
               <span className="eyebrow">Under the hood</span>
               <h2 className="mt-5 text-display-md text-balance">
@@ -175,16 +175,16 @@ export default async function ProductCaseStudy({
                 {product.stack.map((group) => (
                   <div
                     key={group.label}
-                    className="grid grid-cols-3 sm:grid-cols-4 gap-4 py-5 first:pt-0"
+                    className="flex flex-col sm:grid sm:grid-cols-4 gap-3 sm:gap-4 py-5 first:pt-0"
                   >
-                    <dt className="text-[13px] text-ink-subtle col-span-1 font-mono">
+                    <dt className="text-[12.5px] sm:text-[13px] text-ink-subtle sm:col-span-1 font-mono">
                       {group.label}
                     </dt>
-                    <dd className="col-span-2 sm:col-span-3 flex flex-wrap gap-2">
+                    <dd className="sm:col-span-3 flex flex-wrap gap-1.5 sm:gap-2">
                       {group.items.map((item) => (
                         <span
                           key={item}
-                          className="inline-flex items-center rounded-full bg-surface-raised ring-1 ring-surface-border px-2.5 py-1 text-[12.5px] text-ink"
+                          className="inline-flex items-center rounded-full bg-surface-raised ring-1 ring-surface-border px-2.5 py-1 text-[12px] sm:text-[12.5px] text-ink"
                         >
                           {item}
                         </span>
@@ -258,9 +258,9 @@ function CaseBlock({
 function OtherProducts({ currentSlug }: { currentSlug: string }) {
   const others = products.filter((p) => p.slug !== currentSlug).slice(0, 3);
   return (
-    <section className="py-14 md:py-20">
+    <section className="py-12 md:py-20">
       <Container>
-        <div className="flex items-end justify-between mb-10">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 md:mb-10">
           <h2 className="text-display-md">More from Launchdoor</h2>
           <Link
             href="/work"

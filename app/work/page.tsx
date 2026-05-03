@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <>
-      <section className="pt-20 md:pt-28 pb-14 md:pb-16">
+      <section className="pt-12 sm:pt-16 md:pt-28 pb-10 md:pb-16">
         <Container>
           <div className="max-w-3xl">
             <span className="eyebrow">Our work</span>
@@ -34,7 +34,7 @@ export default function WorkPage() {
         </Container>
       </section>
 
-      <section className="pb-16 md:pb-24">
+      <section className="pb-12 md:pb-24">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {products.map((product, i) => (

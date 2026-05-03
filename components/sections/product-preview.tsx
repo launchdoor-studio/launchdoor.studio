@@ -35,8 +35,8 @@ export function ProductPreview({
         className={cn(
           "relative w-full",
           size === "lg"
-            ? "aspect-[16/8] sm:aspect-[16/7]"
-            : "aspect-[16/10]",
+            ? "aspect-[5/4] sm:aspect-[16/9] md:aspect-[16/7]"
+            : "aspect-[5/4] sm:aspect-[16/10]",
         )}
       >
         <div
@@ -50,23 +50,23 @@ export function ProductPreview({
 
       <div
         className={cn(
-          "flex items-start justify-between gap-4 p-6 md:p-7",
+          "flex items-start justify-between gap-3 sm:gap-4 p-5 sm:p-6 md:p-7",
           size === "lg" && "md:p-8",
         )}
       >
-        <div className="flex items-start gap-4 min-w-0">
+        <div className="flex items-start gap-3 sm:gap-4 min-w-0">
           <ProductMark product={product} />
           <div className="min-w-0">
-            <h3 className="text-[19px] md:text-[21px] font-medium tracking-tight text-ink leading-tight">
+            <h3 className="text-[17px] sm:text-[19px] md:text-[21px] font-medium tracking-tight text-ink leading-tight">
               {product.name}
             </h3>
-            <p className="mt-1.5 text-[14px] text-ink-muted leading-relaxed">
+            <p className="mt-1 sm:mt-1.5 text-[13px] sm:text-[14px] text-ink-muted leading-relaxed">
               {product.tagline}
             </p>
           </div>
         </div>
-        <div className="shrink-0 inline-flex items-center gap-1 text-[13px] font-medium text-ink-muted group-hover:text-brand transition-colors pt-1">
-          Case study
+        <div className="shrink-0 inline-flex items-center gap-1 text-[12px] sm:text-[13px] font-medium text-ink-muted group-hover:text-brand transition-colors pt-1">
+          <span className="hidden sm:inline">Case study</span>
           <ArrowUpRight
             size={14}
             strokeWidth={2}
@@ -86,14 +86,14 @@ function BrowserFrame({
   host: string;
 }) {
   return (
-    <div className="absolute inset-5 md:inset-8 rounded-xl bg-surface-raised ring-1 ring-surface-border shadow-raised overflow-hidden flex flex-col">
-      <div className="relative flex items-center px-3 py-2 border-b border-surface-border bg-surface">
-        <div className="flex gap-1.5 z-[1]">
-          <span className="h-2.5 w-2.5 rounded-full bg-surface-border" />
-          <span className="h-2.5 w-2.5 rounded-full bg-surface-border" />
-          <span className="h-2.5 w-2.5 rounded-full bg-surface-border" />
+    <div className="absolute inset-3 sm:inset-5 md:inset-8 rounded-xl bg-surface-raised ring-1 ring-surface-border shadow-raised overflow-hidden flex flex-col">
+      <div className="relative flex items-center px-2.5 sm:px-3 py-1.5 sm:py-2 border-b border-surface-border bg-surface">
+        <div className="flex gap-1 sm:gap-1.5 z-[1]">
+          <span className="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-surface-border" />
+          <span className="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-surface-border" />
+          <span className="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-surface-border" />
         </div>
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-5 w-[min(240px,calc(100%-5.5rem))] rounded-md bg-surface-sunken px-2 text-[10.5px] text-ink-subtle font-mono flex items-center justify-center">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-4 sm:h-5 w-[min(240px,calc(100%-4rem))] rounded-md bg-surface-sunken px-2 text-[9.5px] sm:text-[10.5px] text-ink-subtle font-mono flex items-center justify-center">
           <span className="truncate">{host}</span>
         </div>
       </div>
