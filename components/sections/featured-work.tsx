@@ -16,7 +16,7 @@ export function FeaturedWork() {
               <>
                 Real products. Shipped,
                 {" "}
-                <span className="font-display italic font-normal">
+                <span className="font-display italic font-semibold">
                   in production
                 </span>
                 .

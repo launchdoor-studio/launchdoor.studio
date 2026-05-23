@@ -21,7 +21,7 @@ export default function AboutPage() {
             <span className="eyebrow">About Launchdoor</span>
             <h1 className="mt-5 text-display-lg text-balance">
               An independent software studio building useful{" "}
-              <span className="font-display italic font-normal text-brand">
+              <span className="font-display italic font-semibold text-brand">
                 products
               </span>
               .

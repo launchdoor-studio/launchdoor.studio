@@ -21,7 +21,7 @@ export default function ContactPage() {
               <span className="eyebrow">Contact</span>
               <h1 className="mt-5 text-display-lg text-balance">
                 Let’s{" "}
-                <span className="font-display italic font-normal text-brand">
+                <span className="font-display italic font-semibold text-brand">
                   start a conversation
                 </span>
                 .

@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import {
   JetBrains_Mono,
   Bricolage_Grotesque,
-  Instrument_Serif,
+  Cormorant_Garamond,
   Fraunces,
 } from "next/font/google";
 import { siteConfig } from "@/lib/site";
@@ -22,9 +22,10 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
-const display = Instrument_Serif({
+const display = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
   variable: "--font-display",
   display: "swap",
 });

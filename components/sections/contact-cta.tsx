@@ -29,7 +29,7 @@ export function ContactCTA() {
               </span>
               <h2 className="mt-4 sm:mt-5 text-display-lg text-white text-balance">
                 Have an idea, product, or business problem{" "}
-                <span className="font-display italic font-normal text-brand-200">
+                <span className="font-display italic font-semibold text-brand-200">
                   worth solving
                 </span>
                 ?

@@ -15,7 +15,7 @@ export function WhyLaunchdoor() {
                 <>
                   Engineering partners who
                   {" "}
-                  <span className="font-display italic font-normal">
+                  <span className="font-display italic font-semibold">
                     actually ship
                   </span>
                   .

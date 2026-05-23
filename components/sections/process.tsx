@@ -12,11 +12,11 @@ export function Process() {
             <>
               A steady rhythm from
               {" "}
-              <span className="font-display italic font-normal">
+              <span className="font-display italic font-semibold">
                 problem
               </span>
               {" "}to{" "}
-              <span className="font-display italic font-normal">launch</span>.
+              <span className="font-display italic font-semibold">launch</span>.
             </>
           }
           description="Clear steps, honest timelines, and regular updates. No surprises."

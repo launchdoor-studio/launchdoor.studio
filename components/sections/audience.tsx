@@ -12,7 +12,7 @@ export function Audience() {
             <>
               From first line of code to
               {" "}
-              <span className="font-display italic font-normal">
+              <span className="font-display italic font-semibold">
                 long-term
               </span>
               {" "}partnerships.

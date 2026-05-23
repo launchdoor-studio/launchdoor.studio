@@ -38,7 +38,7 @@ export default function ServicesIndexPage() {
             <span className="eyebrow">Services</span>
             <h1 className="mt-5 text-display-lg text-balance">
               Product engineering for businesses that want to{" "}
-              <span className="font-display italic font-normal text-brand">
+              <span className="font-display italic font-semibold text-brand">
                 move fast
               </span>
               .

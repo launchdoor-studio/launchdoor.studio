@@ -20,7 +20,7 @@ export default function WorkPage() {
             <span className="eyebrow">Our work</span>
             <h1 className="mt-5 text-display-lg text-balance">
               Real software, shipped to{" "}
-              <span className="font-display italic font-normal text-brand">
+              <span className="font-display italic font-semibold text-brand">
                 real users
               </span>
               .

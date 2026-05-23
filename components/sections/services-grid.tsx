@@ -31,7 +31,7 @@ export function ServicesGrid() {
               <>
                 Product engineering, built with
                 {" "}
-                <span className="font-display italic font-normal">
+                <span className="font-display italic font-semibold">
                   real craft
                 </span>
                 .

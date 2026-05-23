@@ -55,15 +55,15 @@ export function Hero() {
 
             <h1 className="mt-6 sm:mt-7 text-display-xl sm:text-balance">
               A modern software studio building{" "}
-              <span className="font-display italic font-normal text-brand">
+              <span className="font-display italic font-semibold text-brand">
                 products
               </span>
               ,{" "}
-              <span className="font-display italic font-normal text-brand">
+              <span className="font-display italic font-semibold text-brand">
                 apps
               </span>
               , and{" "}
-              <span className="font-display italic font-normal text-brand">
+              <span className="font-display italic font-semibold text-brand">
                 AI systems
               </span>{" "}
               for businesses that want to move fast.

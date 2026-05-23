@@ -66,7 +66,7 @@ export default async function ProductCaseStudy({
                   </h1>
                 </div>
               </div>
-              <p className="mt-5 font-display italic text-[19px] sm:text-[22px] md:text-[24px] text-ink-muted leading-snug">
+              <p className="mt-5 font-display italic font-semibold text-[19px] sm:text-[22px] md:text-[24px] text-ink-muted leading-snug">
                 {product.tagline}
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-2 text-[12px] sm:text-[12.5px]">
