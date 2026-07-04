@@ -1,4 +1,5 @@
 import { BotttleMockup } from "./botttle";
+import { CairnlyMockup } from "./cairnly";
 import { FoliomintMockup } from "./foliomint";
 import { OpenConduitMockup } from "./openconduit";
 import { QueriouslyMockup } from "./queriously";
@@ -6,6 +7,7 @@ import { RezumateMockup } from "./rezumate";
 
 const registry: Record<string, () => React.ReactNode> = {
   botttle: BotttleMockup,
+  cairnly: CairnlyMockup,
   foliomint: FoliomintMockup,
   openconduit: OpenConduitMockup,
   queriously: QueriouslyMockup,

@@ -1,6 +1,7 @@
 export type Product = {
   slug: string;
   name: string;
+  category: string;
   tagline: string;
   short: string;
   link: string;
@@ -21,11 +22,12 @@ export const products: Product[] = [
   {
     slug: "botttle",
     name: "Botttle",
+    category: "Client operations",
     tagline: "The client portal you actually own.",
     short:
       "Manage projects, invoices, time tracking, and client collaboration in one self-hosted workspace.",
     link: "https://botttle.dev",
-    status: "Active Development / Production Ready",
+    status: "Active Development",
     overview:
       "Botttle is a self-hosted client portal designed for freelancers and small studios who want to manage their entire business — projects, clients, and payments — in one place without relying on restrictive third-party SaaS platforms.",
     features: [
@@ -78,13 +80,69 @@ export const products: Product[] = [
     logo: "/product-logos/botttle.svg",
   },
   {
+    slug: "cairnly",
+    name: "Cairnly",
+    category: "CRM",
+    tagline: "The CRM that respects your data, taste, and time.",
+    short:
+      "A self-hosted relationship CRM with timelines, scheduling, forms, automations, reports, and optional local or BYOK AI.",
+    link: "https://cairnly.app",
+    status: "Active Development",
+    overview:
+      "Cairnly is a self-hosted CRM built around the full relationship timeline: contacts, deals, notes, email, calendar events, lead forms, booking pages, reports, and automations in one workspace. AI can run locally, with a user-provided key, or be turned off entirely.",
+    features: [
+      {
+        title: "Relationship timelines",
+        description:
+          "Contacts, notes, emails, meetings, forms, bookings, and activity history stay attached to the person or company record.",
+      },
+      {
+        title: "Deals and reporting",
+        description:
+          "Pipeline views, CSV exports, and opinionated reports for revenue, conversion, activity, aging deals, and more.",
+      },
+      {
+        title: "Scheduling and forms",
+        description:
+          "Public booking pages, hosted lead forms, embeds, and webhook endpoints for external workflows.",
+      },
+      {
+        title: "Email and calendar",
+        description:
+          "Gmail OAuth, SMTP/IMAP, Google Calendar, CalDAV, templates, sequences, and timeline-linked communication.",
+      },
+      {
+        title: "AI on your terms",
+        description:
+          "Workspace-level AI modes for local models, bring-your-own provider keys, or fully disabled AI surfaces.",
+      },
+    ],
+    stack: [
+      { label: "App", items: ["Next.js", "React", "TypeScript", "Tailwind CSS"] },
+      { label: "Backend", items: ["tRPC", "Better Auth", "Drizzle ORM"] },
+      { label: "Data", items: ["PostgreSQL", "pg-boss"] },
+      { label: "Infrastructure", items: ["Docker Compose", "Caddy", "Astro"] },
+    ],
+    caseStudy: {
+      challenge:
+        "Most CRMs either hide useful relationship context behind tabs or push small teams into hosted platforms that own the workflow and the data.",
+      solution:
+        "Cairnly keeps the contact timeline as the center of the product and makes self-hosting a first-class path, while still supporting the automation, scheduling, email, calendar, and AI surfaces modern teams expect.",
+      impact:
+        "Teams get a capable CRM they can run on their own infrastructure, adapt to their process, and use without surrendering relationship data to a closed platform.",
+    },
+    accent: "emerald",
+    logo: "/product-logos/cairnly.svg",
+  },
+  {
     slug: "foliomint",
     name: "Foliomint",
+    category: "Portfolio publishing",
     tagline: "Your resume, turned into a portfolio you are proud to share.",
     short:
       "Turn your resume into a professional portfolio website instantly.",
     link: "https://foliomint.site",
-    status: "Beta / Production Ready",
+    status: "Work in progress",
     overview:
       "FolioMint automates the process of creating a professional online presence. It takes a standard resume and transforms it into a polished, live portfolio website in minutes.",
     features: [
@@ -133,6 +191,7 @@ export const products: Product[] = [
   {
     slug: "openconduit",
     name: "OpenConduit",
+    category: "WhatsApp CRM",
     tagline: "The open-source, self-hostable WhatsApp CRM.",
     short: "A self-hosted WhatsApp CRM built for solo operators and small teams.",
     link: "https://openconduit.dev",
@@ -187,6 +246,7 @@ export const products: Product[] = [
   {
     slug: "queriously",
     name: "Queriously",
+    category: "Research tooling",
     tagline: "Research copilot and technical document reader.",
     short:
       "A PDF reader with research copilot capabilities for faster learning and document workflows.",
@@ -244,11 +304,12 @@ export const products: Product[] = [
   {
     slug: "rezumate",
     name: "Rezumate",
+    category: "Resume tooling",
     tagline: "AI-powered resume intelligence for smarter hiring.",
     short:
       "A resume intelligence tool for analyzing, comparing, and improving resumes against job descriptions.",
-    link: "https://rezumate.xyz",
-    status: "Beta / Production Ready",
+    link: "https://resume.app",
+    status: "Work in progress",
     overview:
       "Rezumate is a web-based intelligence tool that helps recruiters and job seekers analyze, compare, and rank resumes against specific job descriptions using high-performance AI.",
     features: [

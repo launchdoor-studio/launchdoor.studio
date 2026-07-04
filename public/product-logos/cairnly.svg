@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Cairnly">
+  <circle cx="48" cy="48" r="39" fill="#d56f35"/>
+  <circle cx="48" cy="48" r="38.5" fill="none" stroke="#b95d2f" stroke-width=".7"/>
+  <ellipse cx="48" cy="28.6" rx="10.4" ry="5.8" fill="#fffdf4" stroke="#9f421d" stroke-width=".7"/>
+  <path
+    d="M28.6 47.4c.4-7 8.2-10.8 19.4-10.8 11.6 0 20 4 20.6 10.7.5 6.4-8.2 10.3-20.6 10.3-12.8 0-19.8-3.7-19.4-10.2Z"
+    fill="#fffdf4"
+    stroke="#9f421d"
+    stroke-width=".7"
+  />
+  <path
+    d="M23.1 65.6c.3-7.4 11-12.1 25.6-12.1 14.1 0 24.1 4.4 24.2 11.7.1 7.3-10.6 10.7-25.1 10.7-14.9 0-25.1-3.3-24.7-10.3Z"
+    fill="#fffdf4"
+    stroke="#9f421d"
+    stroke-width=".7"
+  />
+</svg>

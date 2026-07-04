@@ -105,7 +105,7 @@ export function ContactForm() {
         </h3>
         <p className="mt-3 text-[14.5px] leading-relaxed text-ink-muted max-w-md mx-auto">
           We’ll get back within one business day. In the meantime, feel free to
-          browse our work.
+          explore how we build.
         </p>
         <button
           type="button"

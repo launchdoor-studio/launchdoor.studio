@@ -42,7 +42,7 @@ export default function AboutPage() {
       <section className="py-10 md:py-20">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            <Stat label="Real products shipped" value="5+" caption="and counting" />
+            <Stat label="Studio products" value="6" caption="active and in progress" />
             <Stat
               label="Focus"
               value="Product-first"

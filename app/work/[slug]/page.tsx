@@ -29,7 +29,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function ProductCaseStudy({
+export default async function ProductNotesPage({
   params,
 }: {
   params: Promise<Params>;
@@ -49,7 +49,7 @@ export default async function ProductCaseStudy({
             className="inline-flex items-center gap-1.5 text-[13.5px] text-ink-muted hover:text-ink transition-colors"
           >
             <ArrowLeft size={14} strokeWidth={2} />
-            All work
+            Studio products
           </Link>
         </Container>
       </section>
@@ -119,7 +119,7 @@ export default async function ProductCaseStudy({
             <div className="md:col-span-4">
               <span className="eyebrow">Key features</span>
               <h2 className="mt-5 text-display-md text-balance">
-                What ships in {product.name}.
+                What {product.name} does.
               </h2>
             </div>
             <div className="md:col-span-8">
@@ -152,11 +152,11 @@ export default async function ProductCaseStudy({
 
       <section className="py-12 md:py-20 bg-surface-sunken/60">
         <Container>
-          <span className="eyebrow">Case study</span>
+          <span className="eyebrow">Product notes</span>
           <div className="mt-6 md:mt-8 grid grid-cols-1 md:grid-cols-3 gap-3">
-            <CaseBlock label="Challenge" content={product.caseStudy.challenge} />
-            <CaseBlock label="Solution" content={product.caseStudy.solution} />
-            <CaseBlock label="Impact" content={product.caseStudy.impact} />
+            <CaseBlock label="Problem" content={product.caseStudy.challenge} />
+            <CaseBlock label="Approach" content={product.caseStudy.solution} />
+            <CaseBlock label="What it proves" content={product.caseStudy.impact} />
           </div>
         </Container>
       </section>
@@ -266,7 +266,7 @@ function OtherProducts({ currentSlug }: { currentSlug: string }) {
             href="/work"
             className="inline-flex items-center gap-1.5 text-[13.5px] text-ink-muted hover:text-brand transition-colors"
           >
-            All work
+            All products
             <ArrowUpRight size={14} strokeWidth={2} />
           </Link>
         </div>
@@ -290,7 +290,7 @@ function OtherProducts({ currentSlug }: { currentSlug: string }) {
                 {p.tagline}
               </p>
               <span className="mt-6 inline-flex items-center gap-1 text-[13px] font-medium text-ink-muted group-hover:text-brand transition-colors">
-                Case study
+                Product notes
                 <ArrowUpRight
                   size={13}
                   strokeWidth={2}

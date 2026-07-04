@@ -43,13 +43,18 @@ export const primaryNav: NavGroup[] = [
     ],
   },
   {
-    label: "Work",
+    label: "Products",
     href: "/work",
     items: [
       {
-        label: "Products",
+        label: "Studio Products",
         href: "/work",
-        description: "Products built and shipped by Launchdoor.",
+        description: "Tools built inside the studio.",
+      },
+      {
+        label: "Cairnly",
+        href: "/work/cairnly",
+        description: "Self-hosted relationship CRM.",
       },
       {
         label: "Botttle",
@@ -69,12 +74,12 @@ export const primaryNav: NavGroup[] = [
       {
         label: "Foliomint",
         href: "/work/foliomint",
-        description: "Turn your resume into a portfolio.",
+        description: "Resume-to-portfolio builder in progress.",
       },
       {
         label: "Rezumate",
         href: "/work/rezumate",
-        description: "AI-powered resume intelligence.",
+        description: "Private resume optimizer in progress.",
       },
     ],
   },
@@ -94,8 +99,9 @@ export const footerNav = {
     { label: "MVP Launches", href: "/services/mvp-launches" },
     { label: "Dedicated Build Partner", href: "/services/dedicated-build-partner" },
   ],
-  Work: [
-    { label: "All Products", href: "/work" },
+  Products: [
+    { label: "Studio Products", href: "/work" },
+    { label: "Cairnly", href: "/work/cairnly" },
     { label: "Botttle", href: "/work/botttle" },
     { label: "Queriously", href: "/work/queriously" },
     { label: "OpenConduit", href: "/work/openconduit" },

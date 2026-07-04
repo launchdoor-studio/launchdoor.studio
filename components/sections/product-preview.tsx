@@ -66,7 +66,7 @@ export function ProductPreview({
           </div>
         </div>
         <div className="shrink-0 inline-flex items-center gap-1 text-[12px] sm:text-[13px] font-medium text-ink-muted group-hover:text-brand transition-colors pt-1">
-          <span className="hidden sm:inline">Case study</span>
+          <span className="hidden sm:inline">Product notes</span>
           <ArrowUpRight
             size={14}
             strokeWidth={2}

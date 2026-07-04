@@ -84,10 +84,10 @@ export function Hero() {
                 <ArrowRight size={16} strokeWidth={2} />
               </Link>
               <Link
-                href="/work"
+                href="/services"
                 className="inline-flex items-center gap-2 rounded-full bg-surface-raised px-5 py-2.5 sm:py-3 text-[13.5px] sm:text-[14px] font-medium text-ink ring-1 ring-surface-border hover:bg-white transition-colors"
               >
-                View Our Work
+                Explore Services
               </Link>
             </div>
 
